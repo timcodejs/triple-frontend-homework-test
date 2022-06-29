@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 
 import { PLAYSTORE_IMAGE, APPLE_IMAGE } from '../contents/iamges'
+import { FadeType } from '../types/fadeType'
+import { useFade } from '../hooks/useFade'
 
-const StoreAwardStyled = styled.div`
+const StoreAwardStyled = styled.div<FadeType>`
+  opacity: ${({ isOpacity }) => (isOpacity ? '1' : '0')};
+  transform: translateY(${({ isTransY }) => (isTransY ? '0px' : '30px')});
+  transition: all 0.7s ease-in-out 0.2s;
   height: 50px;
   display: flex;
   & div {
@@ -21,8 +26,9 @@ const StoreAwardStyled = styled.div`
 `
 
 const StoreAward: React.FC = () => {
+  const [opacity, animation] = useFade()
   return (
-    <StoreAwardStyled>
+    <StoreAwardStyled isOpacity={opacity} isTransY={animation}>
       <div>
         2018 구글 플레이스토어
         <br />
