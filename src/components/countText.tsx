@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { useCount } from '../hooks/useCount'
+
 const CountTextStyled = styled.div`
   font-size: 35px;
   margin-bottom: 40px;
@@ -12,17 +14,21 @@ const CountTextStyled = styled.div`
   }
 `
 
-const CountText = () => {
+const CountText: React.FC = () => {
+  const userCount = useCount(350)
+  const reviewCount = useCount(21)
+  const saveCount = useCount(650)
+
   return (
     <CountTextStyled>
       <p>
-        <span>만 명</span>의 사용자
+        <span>{userCount}만 명</span>의 사용자
       </p>
       <p>
-        <span>만 개</span>의 리뷰
+        <span>{reviewCount}만 개</span>의 리뷰
       </p>
       <p>
-        <span>만 개</span>의 저장
+        <span>{saveCount}만 개</span>의 저장
       </p>
     </CountTextStyled>
   )

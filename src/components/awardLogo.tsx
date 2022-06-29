@@ -9,7 +9,7 @@ const AwardLogoStyled = styled.div`
   }
 `
 
-const AwardLogo = () => {
+const AwardLogo: React.FC = () => {
   return (
     <AwardLogoStyled>
       <img src={LOGO_IMAGE} alt="트리플 어워드 로고 이미지" />

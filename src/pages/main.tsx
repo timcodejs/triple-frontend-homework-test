@@ -12,11 +12,9 @@ const MainStyled = styled.div`
   & > div {
     display: flex;
   }
-  & > div > div {
-  }
 `
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <MainStyled>
       <div>

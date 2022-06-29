@@ -20,7 +20,7 @@ const StoreAwardStyled = styled.div`
   }
 `
 
-const StoreAward = () => {
+const StoreAward: React.FC = () => {
   return (
     <StoreAwardStyled>
       <div>
