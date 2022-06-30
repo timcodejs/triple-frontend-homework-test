@@ -10,7 +10,7 @@ export const useFade = (value: number): [boolean, boolean, number] => {
     setOpacity(true)
     setAnimation(true)
     setDelay(value)
-  }, [])
+  }, [value])
 
   return [opacity, animation, delay]
 }
