@@ -8,7 +8,7 @@ const CountTextStyled = styled.div<FadeType>`
   opacity: ${({ isOpacity }) => (isOpacity ? '1' : '0')};
   transform: translateY(${({ isTransY }) => (isTransY ? '0px' : '30px')});
   transition: all 0.7s ease-in-out 0.1s;
-  font-size: 35px;
+  font-size: 36px;
   margin-bottom: 40px;
   & p {
     margin: 0;
@@ -19,7 +19,7 @@ const CountTextStyled = styled.div<FadeType>`
   }
 `
 
-const CountText: React.FC = () => {
+const CountText = () => {
   const userCount = useCount(350)
   const reviewCount = useCount(21)
   const saveCount = useCount(650)

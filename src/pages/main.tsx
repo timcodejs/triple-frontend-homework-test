@@ -14,7 +14,7 @@ const MainStyled = styled.div`
   }
 `
 
-const Main: React.FC = () => {
+const Main = () => {
   return (
     <MainStyled>
       <div>

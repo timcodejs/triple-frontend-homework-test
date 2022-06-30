@@ -10,8 +10,11 @@ const StoreAwardStyled = styled.div<FadeType>`
   transition: all 0.7s ease-in-out 0.2s;
   height: 50px;
   display: flex;
+  line-height: 20px;
+  font-weight: 500;
   & div {
     padding-left: 60px;
+    padding-right: 20px;
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -25,7 +28,7 @@ const StoreAwardStyled = styled.div<FadeType>`
   }
 `
 
-const StoreAward: React.FC = () => {
+const StoreAward = () => {
   const [opacity, animation] = useFade()
   return (
     <StoreAwardStyled isOpacity={opacity} isTransY={animation}>

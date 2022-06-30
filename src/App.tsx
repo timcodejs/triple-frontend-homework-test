@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import Main from './pages/main'
 
+// 전역 스타일 적용
 const GlobalStyled = createGlobalStyle`
   body {
     max-width: 1200px;
