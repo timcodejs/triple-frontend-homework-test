@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 import { LOGO_IMAGE } from '../contents/iamges'
-import { FadeType } from '../types/fadeType'
 import { useFade } from '../hooks/useFade'
+import { FadeInStyled } from '../style/fadeStyle'
 
-const AwardLogoStyled = styled.div<FadeType>`
-  opacity: ${({ isOpacity }) => (isOpacity ? '1' : '0')};
-  transform: translateY(${({ isTransY }) => (isTransY ? '0px' : '30px')});
-  transition: all 0.7s ease-in-out 0s;
+const AwardLogoStyled = styled.div`
   & div {
     display: flex;
     flex-direction: column;
@@ -25,14 +22,16 @@ const AwardLogoStyled = styled.div<FadeType>`
 `
 
 const AwardLogo = () => {
-  const [opacity, animation] = useFade()
+  const [opacity, animation, delay] = useFade(0)
   return (
-    <AwardLogoStyled isOpacity={opacity} isTransY={animation}>
-      <div>
-        <img src={LOGO_IMAGE} alt="트리플 어워드 로고 이미지" />
-        <span>2019년 2월 기준</span>
-      </div>
-    </AwardLogoStyled>
+    <FadeInStyled isOpacity={opacity} isTransY={animation} delayTime={delay}>
+      <AwardLogoStyled>
+        <div>
+          <img src={LOGO_IMAGE} alt="트리플 어워드 로고 이미지" />
+          <span>2019년 2월 기준</span>
+        </div>
+      </AwardLogoStyled>
+    </FadeInStyled>
   )
 }
 

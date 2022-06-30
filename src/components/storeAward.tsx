@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
 import { PLAYSTORE_IMAGE, APPLE_IMAGE } from '../contents/iamges'
-import { FadeType } from '../types/fadeType'
 import { useFade } from '../hooks/useFade'
+import { FadeInStyled } from '../style/fadeStyle'
 
-const StoreAwardStyled = styled.div<FadeType>`
-  opacity: ${({ isOpacity }) => (isOpacity ? '1' : '0')};
-  transform: translateY(${({ isTransY }) => (isTransY ? '0px' : '30px')});
-  transition: all 0.7s ease-in-out 0.2s;
+const StoreAwardStyled = styled.div`
   height: 50px;
   display: flex;
   line-height: 20px;
@@ -29,20 +26,22 @@ const StoreAwardStyled = styled.div<FadeType>`
 `
 
 const StoreAward = () => {
-  const [opacity, animation] = useFade()
+  const [opacity, animation, delay] = useFade(0.2)
   return (
-    <StoreAwardStyled isOpacity={opacity} isTransY={animation}>
-      <div>
-        2018 구글 플레이스토어
-        <br />
-        올해의 앱 최우수상 수상
-      </div>
-      <div>
-        2018 애플 앱스토어
-        <br />
-        오늘의 여행앱 수상
-      </div>
-    </StoreAwardStyled>
+    <FadeInStyled isOpacity={opacity} isTransY={animation} delayTime={delay}>
+      <StoreAwardStyled>
+        <div>
+          2018 구글 플레이스토어
+          <br />
+          올해의 앱 최우수상 수상
+        </div>
+        <div>
+          2018 애플 앱스토어
+          <br />
+          오늘의 여행앱 수상
+        </div>
+      </StoreAwardStyled>
+    </FadeInStyled>
   )
 }
 
