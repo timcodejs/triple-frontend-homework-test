@@ -5,12 +5,10 @@ import { useFade } from '../hooks/useFade'
 import { FadeInStyled } from '../style/fadeStyle'
 
 const AwardLogoStyled = styled.div`
-  & div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 220px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 220px;
   img {
     width: 400px;
   }
@@ -23,13 +21,12 @@ const AwardLogoStyled = styled.div`
 
 const AwardLogo = () => {
   const [opacity, animation, delay] = useFade(0)
+
   return (
     <FadeInStyled isOpacity={opacity} isTransY={animation} delayTime={delay}>
       <AwardLogoStyled>
-        <div>
-          <img src={LOGO_IMAGE} alt="트리플 어워드 로고 이미지" />
-          <span>2019년 2월 기준</span>
-        </div>
+        <img src={LOGO_IMAGE} alt="트리플 어워드 로고 이미지" />
+        <span>2019년 2월 기준</span>
       </AwardLogoStyled>
     </FadeInStyled>
   )

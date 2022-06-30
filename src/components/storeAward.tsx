@@ -27,6 +27,7 @@ const StoreAwardStyled = styled.div`
 
 const StoreAward = () => {
   const [opacity, animation, delay] = useFade(0.2)
+
   return (
     <FadeInStyled isOpacity={opacity} isTransY={animation} delayTime={delay}>
       <StoreAwardStyled>
