@@ -5,7 +5,7 @@ export const useCount = (value: number): number => {
 
   useEffect(() => {
     let frame = 0 // 카운트 증가를 위한 프레임 변수 지정
-    const duration = 1000 / 60 // 카운트 증가 속도
+    const duration = 1000 / 90 // 카운트 증가 속도
     const lateDuration = 1000 / 10 // 두번째 인터벌 카운트 증가 속도
     const total = Math.round(1000 / duration) // 카운트 종료 시점
     // 두번 째 인터벌
